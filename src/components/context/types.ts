@@ -1,13 +1,11 @@
 import { ReactNode } from "react";
-import { Organization, Report, Test } from "../data/types";
+import { Organization, Report } from "../data/types";
 
 type StateContextProps = {
   organization: Organization | null;
-  setOrganization: (state: Organization) => void;
+  updateOrganization: (state: Organization) => void;
   reports: Array<Report> | null;
-  setReports: (state: Array<Report>) => void;
-  tests: Array<Test> | null;
-  setTests: (state: Array<Test>) => void;
+  updateReports: (state: Array<Report>) => void;
 };
 
 type StateProviderProps = {

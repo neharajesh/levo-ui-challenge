@@ -1,6 +1,6 @@
 import { OrganizationCardProps } from "./types";
-import "./styles.css";
 import OrganizationIcon from "../../../assets/organization-icon.svg";
+import "./styles.css";
 
 export const OrganizationCard = ({
   orgName,
