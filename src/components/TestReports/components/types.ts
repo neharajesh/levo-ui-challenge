@@ -5,4 +5,6 @@ export type TestReportCardProps = {
     passed: number;
     failed: number;
   };
+  hasWarning?: boolean;
+  warningText?: string;
 };

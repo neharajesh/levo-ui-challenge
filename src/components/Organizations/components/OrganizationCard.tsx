@@ -9,12 +9,12 @@ export const OrganizationCard = ({
 }: OrganizationCardProps) => {
   return (
     <div
-      className="card"
+      className="orgCard"
       onClick={handleClick}
       key={`organization-${orgId}-card`}
     >
-      <img src={OrganizationIcon} alt="Organization" className="cardIcon" />
-      <p className="cardTitle">{orgName}</p>
+      <img src={OrganizationIcon} alt="Organization" className="orgCardIcon" />
+      <p className="orgCardTitle">{orgName}</p>
     </div>
   );
 };

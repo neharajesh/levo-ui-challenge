@@ -1,7 +1,6 @@
 import { LayoutProps } from "./types";
 import logo from "./logo.svg";
 import "./styles.css";
-import { Outlet } from "react-router-dom";
 
 export const Layout = ({
   organizationName,
@@ -15,10 +14,7 @@ export const Layout = ({
         {organizationName && <p className="orgName">{organizationName}</p>}
         {pageName && <p className="pageName">{pageName}</p>}
       </div>
-      <div className="mainContainer">
-        {children}
-        <Outlet />
-      </div>
+      <div className="mainContainer">{children}</div>
     </div>
   );
 };
