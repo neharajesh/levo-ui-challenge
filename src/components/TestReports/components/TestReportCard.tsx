@@ -1,8 +1,8 @@
 import { TestReportCardProps } from "./types";
 import "./styles.css";
-import ErrorIcon from "./error.svg";
-import SuccessIcon from "./green-check.svg";
-import WarningIcon from "./warning.svg";
+import ErrorIcon from "../../../assets/error.svg";
+import SuccessIcon from "../../../assets/green-check.svg";
+import WarningIcon from "../../../assets/warning.svg";
 import { useNavigate } from "react-router-dom";
 import { useStateContext } from "../../context/StateContext";
 import { Tests } from "../../data";

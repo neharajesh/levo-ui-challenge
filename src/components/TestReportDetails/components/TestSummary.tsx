@@ -1,12 +1,12 @@
 import "./styles.css";
 import { TestSummaryProps } from "./types";
-import BranchIcon from "./branch-icon.svg";
-import CommitIcon from "./commit-icon.svg";
-import DurationIcon from "./duration-icon.svg";
-import GithubIcon from "./github-icon.svg";
-import UrlIcon from "./url-icon.svg";
-import CalendarIcon from "./calendar-icon.svg";
-import CubeIcon from "./cube-icon.svg";
+import BranchIcon from "../../../assets/branch-icon.svg";
+import CommitIcon from "../../../assets/commit-icon.svg";
+import DurationIcon from "../../../assets/duration-icon.svg";
+import GithubIcon from "../../../assets/github-icon.svg";
+import UrlIcon from "../../../assets/url-icon.svg";
+import CalendarIcon from "../../../assets/calendar-icon.svg";
+import CubeIcon from "../../../assets/cube-icon.svg";
 
 export const TestSummary = ({ report }: TestSummaryProps) => {
   return (
@@ -15,7 +15,7 @@ export const TestSummary = ({ report }: TestSummaryProps) => {
         <p>
           <img
             src={DurationIcon}
-            alt=""
+            alt="duration-icon"
             className="testSummaryIcon"
             height={14}
             width={14}
@@ -25,7 +25,7 @@ export const TestSummary = ({ report }: TestSummaryProps) => {
         <p>
           <img
             src={CalendarIcon}
-            alt=""
+            alt="calendar-icon"
             className="testSummaryIcon"
             height={14}
             width={14}
@@ -34,14 +34,19 @@ export const TestSummary = ({ report }: TestSummaryProps) => {
         </p>
       </div>
       <div className="testSummaryData">
-        <img src={CubeIcon} alt="" className="testSummaryIcon" width={14} />
+        <img
+          src={CubeIcon}
+          alt="cube-icon"
+          className="testSummaryIcon"
+          width={14}
+        />
         <p>build-and-deploy (12332) </p>
       </div>
       <div className="testSummaryData">
         <p>
           <img
             src={BranchIcon}
-            alt=""
+            alt="branch-icon"
             className="testSummaryIcon"
             height={14}
             width={14}
@@ -51,7 +56,7 @@ export const TestSummary = ({ report }: TestSummaryProps) => {
         <p>
           <img
             src={CommitIcon}
-            alt=""
+            alt="commit-icon"
             className="testSummaryIcon"
             height={14}
             width={14}
@@ -61,7 +66,7 @@ export const TestSummary = ({ report }: TestSummaryProps) => {
         <p>
           <img
             src={GithubIcon}
-            alt=""
+            alt="github-icon"
             className="testSummaryIcon"
             height={14}
             width={14}
@@ -73,7 +78,7 @@ export const TestSummary = ({ report }: TestSummaryProps) => {
         <p>
           <img
             src={UrlIcon}
-            alt=""
+            alt="url-icon"
             className="testSummaryIcon"
             height={14}
             width={14}
