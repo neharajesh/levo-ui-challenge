@@ -8,4 +8,9 @@ type TestResultsProps = {
   tests?: any;
 };
 
-export type { TestSummaryProps, TestResultsProps };
+type TestCardProps = {
+  test: Test;
+  hasFailed: boolean;
+};
+
+export type { TestSummaryProps, TestResultsProps, TestCardProps };
