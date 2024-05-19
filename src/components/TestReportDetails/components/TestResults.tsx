@@ -6,11 +6,9 @@ import { useState } from "react";
 import { TestCard } from "./TestCard";
 
 export const TestResults = ({ tests }: TestResultsProps) => {
-  console.log({ tests });
   const [filteredKeyword, setFilteredKeyword] = useState<string>("");
 
   const changeHandler = (e: any) => {
-    console.log(e.target.value);
     setFilteredKeyword(e.target.value);
   };
 

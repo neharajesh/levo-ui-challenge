@@ -2,7 +2,6 @@ import "./styles.css";
 import { TestCardProps } from "./types";
 
 export const TestCard = ({ test, hasFailed }: TestCardProps) => {
-  console.log(`testMethod ${hasFailed ? "red" : "green"}`);
   return (
     <div className="testCard">
       <div className={`testMethod ${hasFailed ? "red" : "green"}`}>

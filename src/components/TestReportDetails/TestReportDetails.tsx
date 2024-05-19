@@ -6,7 +6,6 @@ import { Reports } from "../data";
 export const TestReportDetails = () => {
   const { reportId } = useParams();
   const currentReport = Reports.find((report) => report.id === reportId);
-  console.log({ currentReport });
 
   return (
     <Section
