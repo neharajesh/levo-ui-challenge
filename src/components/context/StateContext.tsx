@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { StateContextProps, StateProviderProps } from "./types";
-import { Organization, Report } from "../data/types";
+import { Organization, Report, Test } from "../data/types";
 
 const orgInitialState = {
   id: "",
@@ -32,21 +32,35 @@ const reportInitialState = [
   },
 ];
 
+const testsInitialState = [
+  {
+    id: "",
+    url: "",
+    method: "",
+    executionTime: "",
+  },
+];
+
 const StateContext = createContext<StateContextProps>({
   organization: orgInitialState,
   updateOrganization: (state: Organization) => null,
   reports: reportInitialState,
   updateReports: (state: Array<Report>) => null,
+  tests: testsInitialState,
+  updateTests: (state: Array<Test>) => null,
 });
 
 export const StateContextProvider = ({ children }: StateProviderProps) => {
   const [organization, setOrganization] = useState(orgInitialState);
   const [reports, setReports] = useState(reportInitialState);
+  const [tests, setTests] = useState(testsInitialState);
 
   const updateOrganization = (organization: Organization) =>
     setOrganization(organization);
 
   const updateReports = (reports: Report[]) => setReports(reports);
+
+  const updateTests = (tests: Test[]) => setTests(tests);
 
   return (
     <StateContext.Provider
@@ -55,6 +69,8 @@ export const StateContextProvider = ({ children }: StateProviderProps) => {
         updateOrganization,
         reports,
         updateReports,
+        tests,
+        updateTests,
       }}
     >
       {children}

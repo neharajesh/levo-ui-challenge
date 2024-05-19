@@ -17,7 +17,7 @@ export const TestReportCard = ({
   report,
 }: TestReportCardProps) => {
   const navigate = useNavigate();
-  const { setTests } = useStateContext();
+  const { updateTests } = useStateContext();
 
   const getReportTests = (reportResults: any) => {
     const results = reportResults;
@@ -31,7 +31,7 @@ export const TestReportCard = ({
   };
 
   const handleClick = () => {
-    setTests(getReportTests(report.testResults));
+    updateTests(getReportTests(report.testResults));
     navigate(`/organization/${orgId}/report/${report.id}`);
   };
 

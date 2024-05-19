@@ -1,9 +1,9 @@
 import { TestResultsProps } from "./types";
 import SuccessIcon from "../../../assets/green-check.svg";
 import ErrorIcon from "../../../assets/error.svg";
-import "./styles.css";
 import { useState } from "react";
 import { TestCard } from "./TestCard";
+import "./styles.css";
 
 export const TestResults = ({ tests }: TestResultsProps) => {
   const [filteredKeyword, setFilteredKeyword] = useState<string>("");
@@ -40,7 +40,7 @@ export const TestResults = ({ tests }: TestResultsProps) => {
         </p>
         <div>
           {tests.testsFailed.tests
-            .filter((test: any) => test.url.includes(filteredKeyword))
+            .filter((test: any) => test?.url?.includes(filteredKeyword))
             .map((test: any) => (
               <TestCard key={test.id} test={test} hasFailed />
             ))}
@@ -54,7 +54,7 @@ export const TestResults = ({ tests }: TestResultsProps) => {
         </p>
         <div>
           {tests.testsPassed.tests
-            .filter((test: any) => test.url.includes(filteredKeyword))
+            .filter((test: any) => test?.url?.includes(filteredKeyword))
             .map((test: any) => (
               <TestCard key={test.id} test={test} hasFailed={false} />
             ))}
