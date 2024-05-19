@@ -2,12 +2,22 @@ import { Section } from "../Section";
 import { OrganizationCard } from "./components";
 import { useNavigate } from "react-router-dom";
 import "./components/styles.css";
+import { useStateContext } from "../context/StateContext";
+import { Organizations as Orgs, Reports } from "../data";
+import { Organization as OrgType } from "../data/types";
 
 export const Organizations = () => {
   const navigate = useNavigate();
+  const { setOrganization, setReports } = useStateContext();
 
-  const handleClick = (orgId: string) => {
-    navigate(`/organization/${orgId}`);
+  const getOrganizationReports = (orgReportIds: Array<string>) => {
+    return Reports.filter((report) => orgReportIds.includes(report.id));
+  };
+
+  const handleClick = (organization: OrgType) => {
+    setOrganization(organization);
+    setReports(getOrganizationReports(organization.reports));
+    navigate(`/organization/${organization.id}`);
   };
 
   return (
@@ -17,16 +27,14 @@ export const Organizations = () => {
         description="Pick the organization you want to access"
       >
         <div className="organizationsList">
-          <OrganizationCard
-            orgName="Organization A"
-            orgId="1"
-            handleClick={() => handleClick("1")}
-          />
-          <OrganizationCard
-            orgName="Organization B"
-            orgId="2"
-            handleClick={() => handleClick("2")}
-          />
+          {Orgs.map((organization) => (
+            <OrganizationCard
+              key={organization.id}
+              orgName={organization.name}
+              orgId={organization.id}
+              handleClick={() => handleClick(organization)}
+            />
+          ))}
         </div>
       </Section>
     </>

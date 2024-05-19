@@ -8,7 +8,7 @@ import { TestReportDetails } from "./components/TestReportDetails";
 export const App: React.FunctionComponent = () => {
   return (
     <>
-      <Layout organizationName="Organization A" pageName="Test Results">
+      <Layout>
         <Routes>
           <Route path="/" element={<Organizations />} />
           <Route

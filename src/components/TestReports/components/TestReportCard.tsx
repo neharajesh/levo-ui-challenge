@@ -4,6 +4,8 @@ import ErrorIcon from "./error.svg";
 import SuccessIcon from "./green-check.svg";
 import WarningIcon from "./warning.svg";
 import { useNavigate } from "react-router-dom";
+import { useStateContext } from "../../context/StateContext";
+import { Tests } from "../../data";
 
 export const TestReportCard = ({
   title,
@@ -12,12 +14,25 @@ export const TestReportCard = ({
   hasWarning = false,
   warningText,
   orgId,
-  reportId,
+  report,
 }: TestReportCardProps) => {
   const navigate = useNavigate();
+  const { setTests } = useStateContext();
+
+  const getReportTests = (reportResults: any) => {
+    const results = reportResults;
+    results.testsFailed.tests = Tests.filter((test) =>
+      reportResults.testsFailed.tests.includes(test.id)
+    );
+    results.testsPassed.tests = Tests.filter((test) =>
+      reportResults.testsPassed.tests.includes(test.id)
+    );
+    return results;
+  };
 
   const handleClick = () => {
-    navigate(`/organization/${orgId}/report/${reportId}`);
+    setTests(getReportTests(report.testResults));
+    navigate(`/organization/${orgId}/report/${report.id}`);
   };
 
   return (
@@ -35,11 +50,11 @@ export const TestReportCard = ({
         )}
         <div className="cardStat">
           <img className="cardIcon" src={SuccessIcon} alt="success-icon" />
-          <p>{result.passed} passed</p>
+          <p>{result.testsPassed.count} passed</p>
         </div>
         <div className="cardStat">
           <img className="cardIcon" src={ErrorIcon} alt="error-icon" />
-          <p>{result.failed} failed</p>
+          <p>{result.testsFailed.count} failed</p>
         </div>
       </div>
     </div>

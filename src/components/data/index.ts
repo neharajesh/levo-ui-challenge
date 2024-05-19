@@ -19,13 +19,14 @@ const Reports: Array<Report> = [
     date_created: new Date(Date.now() - 1000 * 60),
     duration: "10 minutes",
     testResults: {
+      count: 10,
       testsPassed: {
         count: 10,
-        ids: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+        tests: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
       },
       testsFailed: {
         count: 0,
-        ids: [],
+        tests: [],
       },
     },
     warnings: [""],
@@ -40,13 +41,14 @@ const Reports: Array<Report> = [
     date_created: new Date(Date.now() - 1000 * 60 * 2),
     duration: "30 minutes",
     testResults: {
+      count: 10,
       testsPassed: {
         count: 7,
-        ids: ["11", "12", "13", "14", "15", "16", "17"],
+        tests: ["11", "12", "13", "14", "15", "16", "17"],
       },
       testsFailed: {
         count: 3,
-        ids: ["18", "19", "20"],
+        tests: ["18", "19", "20"],
       },
     },
     warnings: ["Took too long"],
@@ -61,13 +63,14 @@ const Reports: Array<Report> = [
     date_created: new Date(Date.now() - 1000 * 60 * 3),
     duration: "10 minutes",
     testResults: {
+      count: 10,
       testsPassed: {
         count: 0,
-        ids: [],
+        tests: [],
       },
       testsFailed: {
         count: 10,
-        ids: ["21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
+        tests: ["21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
       },
     },
     warnings: [""],
@@ -82,13 +85,14 @@ const Reports: Array<Report> = [
     date_created: new Date(Date.now() - 1000 * 60 * 4),
     duration: "4 minutes",
     testResults: {
+      count: 3,
       testsPassed: {
         count: 3,
-        ids: ["31", "32", "33"],
+        tests: ["31", "32", "33"],
       },
       testsFailed: {
         count: 0,
-        ids: [],
+        tests: [],
       },
     },
     warnings: [""],
@@ -103,13 +107,14 @@ const Reports: Array<Report> = [
     date_created: new Date(Date.now() - 1000 * 60 * 5),
     duration: "10 minutes",
     testResults: {
+      count: 2,
       testsPassed: {
         count: 0,
-        ids: [],
+        tests: [],
       },
       testsFailed: {
         count: 2,
-        ids: ["34", "35"],
+        tests: ["34", "35"],
       },
     },
     warnings: [""],
@@ -124,13 +129,14 @@ const Reports: Array<Report> = [
     date_created: new Date(Date.now() - 1000 * 60 * 6),
     duration: "5 minutes",
     testResults: {
+      count: 5,
       testsPassed: {
         count: 5,
-        ids: ["36", "37", "38", "39", "40"],
+        tests: ["36", "37", "38", "39", "40"],
       },
       testsFailed: {
         count: 0,
-        ids: [],
+        tests: [],
       },
     },
     warnings: [""],

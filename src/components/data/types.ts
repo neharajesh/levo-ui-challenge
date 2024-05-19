@@ -9,13 +9,14 @@ type Report = {
   date_created: Date;
   duration: string;
   testResults: {
+    count: number;
     testsPassed: {
       count: number;
-      ids: Array<string>;
+      tests: Array<string>;
     };
     testsFailed: {
       count: number;
-      ids: Array<string>;
+      tests: Array<string>;
     };
   };
   warnings: Array<string>;
