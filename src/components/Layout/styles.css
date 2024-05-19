@@ -1,0 +1,38 @@
+.page {
+    display: flex;
+    justify-content: space-between;
+    background-color: #050203;
+    color: white;
+}
+
+.sidebar {
+    width: 15vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.orgName {
+    margin-top: -5px;
+    font-size: 12px;
+
+}
+
+.pageName {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 2.5rem;
+}
+
+.mainContainer {
+    width: 85vw;
+    height: 100vh;
+    margin: 1.5rem;
+}
+
+.logo {
+    height: 40px;
+    pointer-events: none;
+    margin: 2rem;
+  }

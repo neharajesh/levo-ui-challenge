@@ -1,0 +1,1 @@
+export { TestReportDetails } from "./TestReportDetails";
