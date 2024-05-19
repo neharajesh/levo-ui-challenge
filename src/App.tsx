@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Organizations } from "./components/Organizations";
+import { Layout } from "./components/Layout";
+import { Route, Routes } from "react-router-dom";
+import { TestReports } from "./components/TestReports";
+import { TestReportDetails } from "./components/TestReportDetails";
 
 export const App: React.FunctionComponent = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="logo" />
-        <p>
-          UI Engineer Position Take Home Challenge
-        </p>
-        <a
-          className="App-link"
-          href="https://doc.clickup.com/d/h/a0kg5-1183/8d71939ada06572"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open the Exercise
-        </a>
-      </header>
-    </div>
+    <>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Organizations />} />
+          <Route
+            path="/organization/:organizationId"
+            element={<TestReports />}
+          />
+          <Route
+            path="/organization/:organizationId/report/:reportId"
+            element={<TestReportDetails />}
+          />
+        </Routes>
+      </Layout>
+    </>
   );
-}
+};
 
 export default App;
