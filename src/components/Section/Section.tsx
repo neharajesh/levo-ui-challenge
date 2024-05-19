@@ -6,7 +6,7 @@ export const Section = ({ title, description, children }: SectionProps) => {
     <div className="section">
       <p className="sectionTitle">{title}</p>
       {description && <p className="sectionDescription">{description}</p>}
-      <div>{children}</div>
+      <div className="sectionChildren">{children}</div>
     </div>
   );
 };

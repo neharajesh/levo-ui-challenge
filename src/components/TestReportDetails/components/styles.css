@@ -1,0 +1,7 @@
+/* Test Summary styles */
+.testSummaryCard {
+    background-color: #ADB5BD;
+    border-radius: 4px;
+    height: 300px;
+    width: 500px;
+}

@@ -1,3 +1,10 @@
+import { Section } from "../Section";
+import { TestSummary } from "./components";
+
 export const TestReportDetails = () => {
-  return <h1> Test Report Details </h1>;
+  return (
+    <Section title="Test Report Details">
+      <TestSummary />
+    </Section>
+  );
 };

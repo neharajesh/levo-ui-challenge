@@ -3,6 +3,7 @@ import "./styles.css";
 import ErrorIcon from "./error.svg";
 import SuccessIcon from "./green-check.svg";
 import WarningIcon from "./warning.svg";
+import { useNavigate } from "react-router-dom";
 
 export const TestReportCard = ({
   title,
@@ -10,9 +11,17 @@ export const TestReportCard = ({
   result,
   hasWarning = false,
   warningText,
+  orgId,
+  reportId,
 }: TestReportCardProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/organization/${orgId}/report/${reportId}`);
+  };
+
   return (
-    <div className="card">
+    <div className="card" onClick={handleClick}>
       <div className="cardDetails">
         <p className="cardTitle">{title}</p>
         {description && <p className="cardDesc">{description}</p>}

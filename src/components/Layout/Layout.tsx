@@ -10,7 +10,9 @@ export const Layout = ({
   return (
     <div className="page">
       <div className="sidebar">
-        <img className="logo" src={logo} alt="Levo" />
+        <a href="/">
+          <img className="logo" src={logo} alt="Levo" />
+        </a>
         {organizationName && <p className="orgName">{organizationName}</p>}
         {pageName && <p className="pageName">{pageName}</p>}
       </div>

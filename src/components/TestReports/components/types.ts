@@ -7,4 +7,6 @@ export type TestReportCardProps = {
   };
   hasWarning?: boolean;
   warningText?: string;
+  orgId: string;
+  reportId: string;
 };
